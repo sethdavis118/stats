@@ -11,7 +11,7 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  sum = 0;
+  let sum = 0;
   for (let element of numbers) {
     sum += element;
   }
@@ -23,12 +23,9 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  sum = 0;
-  let div = numbers.length;
+  let sum = getSum(numbers);
+  let div = getLength(numbers);
   let mean = 0;
-  for (let element of numbers) {
-    sum += element;
-  }
   mean = sum / div;
 
   return mean;
