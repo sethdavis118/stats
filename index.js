@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,7 +11,11 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  sum = 0;
+  for (let element of numbers) {
+    sum += element;
+  }
+  return sum;
 }
 
 /**
@@ -19,7 +23,15 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  sum = 0;
+  let div = numbers.length;
+  let mean = 0;
+  for (let element of numbers) {
+    sum += element;
+  }
+  mean = sum / div;
+
+  return mean;
 }
 
 /**
@@ -27,7 +39,15 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let min = null;
+  for (let element of numbers) {
+    if (min === null) {
+      min = element;
+    } else if (min > element) {
+      min = element;
+    }
+  }
+  return min;
 }
 
 /**
@@ -35,7 +55,15 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let max = null;
+  for (let element of numbers) {
+    if (max === null) {
+      max = element;
+    } else if (max < element) {
+      max = element;
+    }
+  }
+  return max;
 }
 
 /**
@@ -43,7 +71,10 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  let min = getMin(numbers);
+  let max = getMax(numbers);
+  let range = max - min;
+  return range;
 }
 
 /**
@@ -51,7 +82,13 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let evens = [];
+  for (let element of numbers) {
+    if (element % 2 === 0) {
+      evens.push(element);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -59,7 +96,14 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let odds = [];
+  for (let element of numbers) {
+    if (element % 2 === 1 || element % 2 === -1) {
+      // "=== 1" instead of "!= 0" to exclude decimals
+      odds.push(element);
+    }
+  }
+  return odds;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
